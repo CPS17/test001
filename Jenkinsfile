@@ -9,6 +9,9 @@ pipeline {
         CI = 'true'
     }
     stages {
+    stage('Git') {
+       git branch: 'master', credentialsId: 'Git ton', url: 'https://github.com/CPS17/test001.git'
+    }
         stage('stage 01') {
             steps {
                 sh 'echo 01'
