@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'container:local'
+        image 'container:local'
             args '--expose 3000 --network proxy_nw'
         }
     }
@@ -9,11 +9,17 @@ pipeline {
         CI = 'true'
     }
     stages {
-       stage('Git') {
-          git branch: 'master', credentialsId: 'Git ton', url: 'https://github.com/CPS17/test001.git'
-       }
-       stage('stage 01') {
-          sh 'echo 01'
+        stage('Git') {
+            steps{
+                git branch: 'master', credentialsId: 'Git ton', url: 'https://github.com/CPS17/test001.git'
+
+
+     }
+        }
+        stage('stage 01') {
+            steps{
+                sh 'echo 01'
+            }
         }
     }
 }
