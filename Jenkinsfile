@@ -12,13 +12,16 @@ pipeline {
         stage('Git') {
             steps{
                 git branch: 'master', credentialsId: 'Git ton', url: 'https://github.com/CPS17/test001.git'
-
-
-     }
+            }
         }
         stage('stage 01') {
             steps{
                 sh 'echo 01'
+            }
+        }
+        stage('wait'){
+            steps{
+            input message: 'Finished using the web site? (Click "Proceed" to continue)'
             }
         }
     }
