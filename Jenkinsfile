@@ -21,7 +21,8 @@ pipeline {
         }
         stage('wait'){
             steps{
-            input message: 'Finished using the web site? (Click "Proceed" to continue)'
+//            input message: 'Finished using the web site? (Click "Proceed" to continue)'
+              echo "echo 02"
             }
         }
     }
