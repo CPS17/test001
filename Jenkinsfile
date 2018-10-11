@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Git') {
             steps{
-                git branch: 'master', credentialsId: 'Git ton', url: 'https://github.com/CPS17/test001.git'
+                git branch: 'test01', credentialsId: 'Git ton', url: 'https://github.com/CPS17/test001.git'
             }
         }
         stage('stage 01') {
