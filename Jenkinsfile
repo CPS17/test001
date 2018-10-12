@@ -26,4 +26,15 @@ pipeline {
             }
         }
     }
+      post { 
+        always { 
+//            discordSend description: 'Jenkins Pipeline Build', footer: 'Footer Text', link: env.BUILD_URL, successful: currentBuild.resultIsBetterOrEqualTo('SUCCESS'), unstable: false, title: JOB_NAME, webhookURL: 'https://discordapp.com/api/webhooks/496992026932543489/4exQIw18D4U_4T0H76bS3Voui4SyD7yCQzLP9IRQHKpwGRJK1-IFnyZLyYzDmcBKFTJw'
+                echo env.CHANGE_AUTHOR
+                echo env.CHANGE_AUTHOR_DISPLAY_NAME
+                echo env.CHANGE_ID
+                echo env.CHANGE_TITLE
+                
+        }
+    }
+
 }
