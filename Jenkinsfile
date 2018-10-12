@@ -12,6 +12,8 @@ pipeline {
         stage('Git') {
             steps{
                 git branch: 'test01', credentialsId: 'Git ton', url: 'https://github.com/CPS17/test001.git'
+                echo env.CHANGE_ID
+
             }
         }
         stage('stage 01') {
@@ -28,12 +30,15 @@ pipeline {
     }
       post { 
         always { 
-//            discordSend description: 'Jenkins Pipeline Build', footer: 'Footer Text', link: env.BUILD_URL, successful: currentBuild.resultIsBetterOrEqualTo('SUCCESS'), unstable: false, title: JOB_NAME, webhookURL: 'https://discordapp.com/api/webhooks/496992026932543489/4exQIw18D4U_4T0H76bS3Voui4SyD7yCQzLP9IRQHKpwGRJK1-IFnyZLyYzDmcBKFTJw'
+//discordSend description: 'J Pipeline Build', footer: 'Footer Text', link: env.BUILD_URL, successful: currentBuild.resultIsBetterOrEqualTo('SUCCESS'), unstable: false, title: JOB_NAME, webhookURL: 'https://discordapp.com/api/webhooks/496992026932543489/4exQIw18D4U_4T0H76bS3Voui4SyD7yCQzLP9IRQHKpwGRJK1-IFnyZLyYzDmcBKFTJw'
                 echo env.CHANGE_AUTHOR
                 echo env.CHANGE_AUTHOR_DISPLAY_NAME
                 echo env.CHANGE_ID
                 echo env.CHANGE_TITLE
                 echo env.BUILD_URL
+                echo env.JOB_NAME
+                echo JOB_NAME
+                echo CHANGE_ID
                 
         }
     }
