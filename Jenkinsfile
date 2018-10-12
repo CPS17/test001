@@ -33,7 +33,7 @@ pipeline {
                 echo env.CHANGE_AUTHOR_DISPLAY_NAME
                 echo env.CHANGE_ID
                 echo env.CHANGE_TITLE
-                env.BUILD_URL
+                echo env.BUILD_URL
                 
         }
     }
