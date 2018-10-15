@@ -31,9 +31,10 @@ pipeline {
       post { 
         always { 
 //discordSend description: 'J Pipeline Build', footer: 'Footer Text', link: env.BUILD_URL, successful: currentBuild.resultIsBetterOrEqualTo('SUCCESS'), unstable: false, title: JOB_NAME, webhookURL: 'https://discordapp.com/api/webhooks/496992026932543489/4exQIw18D4U_4T0H76bS3Voui4SyD7yCQzLP9IRQHKpwGRJK1-IFnyZLyYzDmcBKFTJw'
+            steps {
                 echo "Git commit"  env.GIT_COMMIT
                 sh 'git log --format="medium" -1 ${GIT_COMMIT}'
-                
+            }
         }
     }
 
