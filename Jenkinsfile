@@ -30,7 +30,7 @@ pipeline {
     }
       post { 
         always {
-COMMIT_TEXT = sh (
+def COMMIT_TEXT = sh (
     script: 'git log --format="full" -1 ${GIT_COMMIT}',
     returnStdout: true
 ).trim()
