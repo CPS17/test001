@@ -11,6 +11,7 @@ pipeline {
             script: 'git log --format="full" -1 ${GIT_COMMIT}',
             returnStdout: true
         ).trim()
+        TextComment = 'Text from Variable'
 
     }
     stages {
@@ -36,7 +37,7 @@ pipeline {
       post { 
         always {
 
-//discordSend description: 'J Pipeline Build', footer: "env.COMMIT_TEXT", link: env.BUILD_URL, successful: currentBuild.resultIsBetterOrEqualTo('SUCCESS'), unstable: false, title: JOB_NAME, webhookURL: 'https://discordapp.com/api/webhooks/496992026932543489/4exQIw18D4U_4T0H76bS3Voui4SyD7yCQzLP9IRQHKpwGRJK1-IFnyZLyYzDmcBKFTJw'
+discordSend description: env.TextComment, footer: env.COMMIT_TEXT, link: env.BUILD_URL, successful: currentBuild.resultIsBetterOrEqualTo('SUCCESS'), unstable: false, title: JOB_NAME, webhookURL: 'https://discordapp.com/api/webhooks/496992026932543489/4exQIw18D4U_4T0H76bS3Voui4SyD7yCQzLP9IRQHKpwGRJK1-IFnyZLyYzDmcBKFTJw'
 echo "t1"
 echo env.COMMIT_TEXT
 echo env.BUILD_URL             
