@@ -31,8 +31,9 @@ pipeline {
     }
       post { 
         always {
-discordSend description: 'J Pipeline Build', footer: "env.COMMIT_TEXT", link: env.BUILD_URL, successful: currentBuild.resultIsBetterOrEqualTo('SUCCESS'), unstable: false, title: JOB_NAME, webhookURL: 'https://discordapp.com/api/webhooks/496992026932543489/4exQIw18D4U_4T0H76bS3Voui4SyD7yCQzLP9IRQHKpwGRJK1-IFnyZLyYzDmcBKFTJw'
-            
+//discordSend description: 'J Pipeline Build', footer: "env.COMMIT_TEXT", link: env.BUILD_URL, successful: currentBuild.resultIsBetterOrEqualTo('SUCCESS'), unstable: false, title: JOB_NAME, webhookURL: 'https://discordapp.com/api/webhooks/496992026932543489/4exQIw18D4U_4T0H76bS3Voui4SyD7yCQzLP9IRQHKpwGRJK1-IFnyZLyYzDmcBKFTJw'
+echo env.COMMIT_TEXT
+env.BUILD_URL             
         }
     }
 
